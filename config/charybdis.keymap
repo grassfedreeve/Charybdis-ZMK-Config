@@ -26,11 +26,6 @@
     combos {
         compatible = "zmk,combos";
 
-        Enter {
-            bindings = <&kp ENTER>;
-            key-positions = <16 17 18>;
-        };
-
         LeftClickRight {
             bindings = <&mkp LCLK>;
             key-positions = <16 17>;
@@ -39,16 +34,6 @@
         RightClickRight {
             bindings = <&mkp RCLK>;
             key-positions = <17 18>;
-        };
-
-        Slash {
-            bindings = <&kp SLASH>;
-            key-positions = <28 27>;
-        };
-
-        BackSlash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <27 26>;
         };
 
         ParaLeft {
@@ -83,73 +68,14 @@
 
         Delete {
             bindings = <&kp DELETE>;
-            key-positions = <12 11 13>;
-        };
-
-        Quote {
-            bindings = <&kp SQT>;
-            key-positions = <8 7>;
-            layers = <0>;
-        };
-
-        grave {
-            bindings = <&kp GRAVE>;
-            key-positions = <6 7>;
-            layers = <0>;
-        };
-
-        CapitalE {
-            bindings = <&kp RS(E)>;
-            key-positions = <33 34>;
-            layers = <1>;
+            key-positions = <7 8>;
         };
 
         CapsWord {
             bindings = <&caps_word>;
             key-positions = <14 15>;
         };
-
-        JCombo {
-            bindings = <&kp J>;
-            key-positions = <3 2>;
-            layers = <0>;
-        };
-
-        VCombo {
-            bindings = <&kp V>;
-            key-positions = <1 2>;
-        };
-
-        ZCombo {
-            bindings = <&kp Z>;
-            key-positions = <21 22>;
-        };
-
-        QCombo {
-            bindings = <&kp Q>;
-            key-positions = <3 2>;
-            layers = <1>;
-        };
-
-        BackspaceTop {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <6 7>;
-            layers = <1>;
-        };
-
-        DeleteTop {
-            bindings = <&kp DELETE>;
-            key-positions = <8 7>;
-            layers = <1>;
-        };
-
-        ColeQ {
-            bindings = <&kp Q>;
-            key-positions = <23 22>;
-            layers = <0>;
-        };
     };
-
 
     behaviors {
         Shift_Enter: Shift_Enter {
@@ -168,19 +94,10 @@
 
         COLEMAK {
             bindings = <
-  &kp Q             &kp W               &kp F           &kp P           &kp B        &kp K            &kp L                           &kp U      &kp Y    &kp APOS
+  &kp Q             &kp W               &kp F           &kp P           &kp B        &kp J            &kp L                           &kp U      &kp Y    &kp APOS
   &mt LEFT_SHIFT A  &mt LEFT_CONTROL R  &mt LEFT_ALT S  &mt LEFT_GUI T  &kp G        &kp M            &kp N                           &kp E      &kp I    &kp O
-  &none             &kp X               &kp C           &kp D           &none        &none            &kp H                           &kp COMMA  &kp DOT  &none
-                                        &mo 6           &kp SPACE       &lt 2 TAB    &lt 4 BACKSPACE  &Shift_Enter RIGHT_SHIFT ENTER
-            >;
-        };
-
-        APTMAK {
-            bindings = <
-  &key_repeat       &kp W           &kp F               &kp P                 &kp B        &kp J        &kp L              &kp U      &kp Y    &kp SINGLE_QUOTE
-  &mt LEFT_SHIFT R  &mt LEFT_ALT S  &mt LEFT_CONTROL T  &mt LEFT_WIN H        &kp K        &kp X        &kp N              &kp A      &kp I    &kp O
-  &trans            &kp C           &kp G               &kp D                 &trans       &none        &kp M              &kp COMMA  &kp DOT  &trans
-                                    &mo 6               &mt LEFT_SHIFT SPACE  &lt 2 TAB    &lt 4 ENTER  &mt RIGHT_SHIFT E
+  &kp Z             &kp X               &kp C           &kp D           &kp V        &kp K            &kp H                           &kp COMMA  &kp DOT  &kp SLASH
+                                        &mo 4           &kp SPACE       &lt 1 TAB    &lt 2 BACKSPACE  &Shift_Enter RIGHT_SHIFT ENTER
             >;
         };
 
@@ -188,17 +105,8 @@
             bindings = <
   &kp LA(F4)  &kp LG(UP_ARROW)  &kp LG(LEFT)     &kp LG(RIGHT)        &kp LC(W)    &kp PRINTSCREEN  &kp BACKSPACE     &kp ENTER          &kp DELETE    &trans
   &kp LC(Z)   &kp RC(RS(T))     &kp LS(LC(TAB))  &kp LC(TAB)          &kp LC(A)    &kp ENTER        &kp LEFT          &kp DOWN           &kp UP_ARROW  &kp RIGHT
-  &trans      &kp LC(X)         &kp LC(C)        &mt LC(LS(V)) LC(V)  &trans       &trans           &kp LC(LS(LEFT))  &kp LS(LC(RIGHT))  &trans        &trans
-                                &trans           &trans               &trans       &lt 5 BACKSPACE  &kp LSHFT
-            >;
-        };
-
-        MACNAV {
-            bindings = <
-  &kp LG(Q)  &kp LG(UP_ARROW)  &kp LG(LEFT)     &kp LG(RIGHT)        &kp LG(W)    &kp LG(LS(N5))   &kp BACKSPACE     &kp ENTER          &kp DELETE    &trans
-  &kp LG(Z)  &kp LG(T)         &kp LS(LC(TAB))  &kp LC(TAB)          &kp LG(A)    &kp ENTER        &kp LEFT          &kp DOWN           &kp UP_ARROW  &kp RIGHT
-  &trans     &kp LG(X)         &kp LG(C)        &mt LS(LG(V)) LG(V)  &trans       &trans           &kp LS(LA(LEFT))  &kp LS(LA(RIGHT))  &trans        &trans
-                               &trans           &trans               &trans       &lt 5 BACKSPACE  &kp LSHFT
+  &kp LC(Z)   &kp LC(X)         &kp LC(C)        &mt LC(LS(V)) LC(V)  &kp LC(Y)    &trans           &kp LC(LS(LEFT))  &kp LS(LC(RIGHT))  &trans        &trans
+                                &trans           &trans               &trans       &lt 3 BACKSPACE  &kp LSHFT
             >;
         };
 
@@ -207,7 +115,7 @@
   &kp GRAVE  &kp EXCL   &kp AT       &kp POUND       &kp DOLLAR    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp SEMI
   &kp TILDE  &kp STAR   &kp PIPE     &kp UNDER       &kp MINUS     &kp N0     &kp N4  &kp N5  &kp N6  &kp COLON
   &trans     &kp CARET  &kp PERCENT  &kp AMPERSAND   &trans        &trans     &kp N7  &kp N8  &kp N9  &trans
-                        &trans       &kp LEFT_SHIFT  &lt 5 TAB     &trans     &trans
+                        &trans       &kp LEFT_SHIFT  &lt 3 TAB     &trans     &trans
             >;
         };
 
@@ -215,7 +123,7 @@
             bindings = <
   &kp ESC  &kp F1  &kp F2  &kp F3  &kp F10    &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4
   &kp F12  &kp F4  &kp F5  &kp F6  &kp F11    &out OUT_TOG  &kp K_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &bt BT_CLR
-  &trans   &kp F7  &kp F8  &kp F9  &trans     &trans        &to 1             &to 0              &to 1            &trans
+  &trans   &kp F7  &kp F8  &kp F9  &kp F12    &trans        &trans            &trans             &trans           &trans
                    &trans  &trans  &trans     &trans        &trans
             >;
         };
